@@ -1,13 +1,16 @@
-type User {
-  id: ID! @unique
-  email: String @unique
-  name: String!
-  posts: [Post!]!
-}
-
-type Post {
+type Resource {
   id: ID! @unique
   title: String!
-  published: Boolean! @default(value: "false")
+  url: String @unique
+  description: String!
+  type: String!
   author: User
+}
+
+type User {
+  id: ID! @unique
+  name: String!
+  email: String!
+  password: String!
+  resources: [Resource]
 }
