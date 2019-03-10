@@ -1,0 +1,38 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi node_modules/next/dist/client/next": 0
+    },
+    "usedIds": {
+      "0": 0
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/runtime/main.js": 2,
+      "static/~dkABB5w1_kCo~SmbTof_/pages/_app.js": 3,
+      "static/~dkABB5w1_kCo~SmbTof_/pages/_error.js": 4,
+      "static/~dkABB5w1_kCo~SmbTof_/pages/about.js": 5,
+      "static/~dkABB5w1_kCo~SmbTof_/pages/index.js": 6,
+      "static/~dkABB5w1_kCo~SmbTof_/pages/post.js": 7,
+      "static/OngPxQQZKCQWFns_B2Rtc/pages/_app.js": 8,
+      "static/OngPxQQZKCQWFns_B2Rtc/pages/_error.js": 9,
+      "static/OngPxQQZKCQWFns_B2Rtc/pages/about.js": 10,
+      "static/OngPxQQZKCQWFns_B2Rtc/pages/index.js": 11,
+      "static/OngPxQQZKCQWFns_B2Rtc/pages/post.js": 12
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      10,
+      11,
+      12,
+      2,
+      8,
+      9
+    ]
+  }
+}
