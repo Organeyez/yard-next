@@ -8,10 +8,12 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @resources = @category.resources
+    render :json => @resources
   end
 
   def new
     @category = Category.new 
+    render :json => @category
   end
 
   def create

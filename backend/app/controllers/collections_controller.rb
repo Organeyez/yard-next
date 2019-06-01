@@ -3,6 +3,7 @@ class CollectionsController < ApplicationController
   def index
     @collections = Collection.where(owner_id: params[:user_id]).order(:name)
     @user = User.find(params[:user_id]) 
+    render json: { collections: @collections, user: @user }
   end
 
   def show
@@ -19,6 +20,7 @@ class CollectionsController < ApplicationController
 
   def new
     @collection = Collection.new 
+    render :json => @collection
   end
 
   def create
