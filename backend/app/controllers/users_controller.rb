@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
   require 'csv'
 
-	def index
+  def index
    @users = User.all 
    @subscribed_users = User.where(subscribe: true)
-	end 
+  end 
 
-	def show
-		@user = User.find(params[:id])
-		@resources = @user.posted_resources.order(:title)
-	end
-
+  def show
+    @user = User.find(params[:id])
+    @resources = @user.posted_resources.order(:title)
+  end
 
   def email_subscribers
     @subscribed_users = User.where(subscribe: true)
@@ -20,6 +19,5 @@ class UsersController < ApplicationController
       end
     end
   end
-
 end 
 

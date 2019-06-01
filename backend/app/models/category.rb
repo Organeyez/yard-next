@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-	has_many :resources
+  has_many :resources
 
-	validates :title, presence: true 
+  validates :title, presence: true 
 end

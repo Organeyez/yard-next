@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def new
     @review = Review.new 
   end
@@ -49,5 +48,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:message, :evidence_rating, :useful_rating, :detail_rating, :recommend_rating, :author_id, :resource_id)
   end
-
 end
