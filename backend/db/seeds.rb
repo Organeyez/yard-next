@@ -57,7 +57,7 @@ categories = [
   "Civil Rights & Discrimination",
   "Government Spending",
   "Humanitarian Crises",
-  "Slavery"
+  "Slavery",
   "Constructive Engagement of Conflict"
 ]
 
