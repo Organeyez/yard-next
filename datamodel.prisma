@@ -1,16 +1,108 @@
+NOTE: Primsa is pretty lightweight and appears to have little to no support for "has many through" and foreign keys
+
+type Category {
+  id: ID! @unique
+  title: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+  resources: [Resource!]!
+}
+
+type CollectionResource {
+  id: ID! @unique
+  collection: Collection!
+  resource: Resource! @unique
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Collection {
+  id: ID! @unique
+  name: String!
+  owner: User!
+  created_at: DateTime!
+  updated_at: DateTime!
+  collectionResources: [CollectionResource!]!
+  resources: [Resource!]!
+}
+
+type Favorite {
+  id: ID! @unique
+  resource: Resource!
+  user: User!
+  created_at: DateTime!
+  updated_at: DateTime!
+  collectionResources: [CollectionResource!]!
+}
+
+type ResourceTag {
+  id: ID! @unique
+  resource: Resource!
+  tag: Tag!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
 type Resource {
   id: ID! @unique
   title: String!
   url: String @unique
   description: String!
+  category: Category!
   type: String!
-  author: User
+  author: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+  resourceTags: [ResourceTag!]!
+  tags: [Tag!]!
+  resources: [Resource!]!
+  collectionResources: [CollectionResource!]!
+  favorites: [Favorite!]!
+  fans: [User!]!
+  reviews: [Review!]!
+  reviewers: [User!]!
+}
+
+type Review {
+  id: ID! @unique
+  message: String!
+  evidence_rating: String!
+  useful_rating: String!
+  detail_rating: String!
+  recommend_rating: String!
+  author: String!
+  resource: Resource!
+  created_at: DateTime!
+  updated_at: DateTime!
+
+}
+
+type Tag {
+  id: ID! @unique
+  created_at: DateTime!
+  updated_at: DateTime!
+  resourceTags: [ResourceTag!]!
 }
 
 type User {
   id: ID! @unique
-  name: String!
-  email: String!
+  username: String!
+  admin: Boolean! @default(value: "false")
+  subscribe: Boolean! @default(value: "true")
+  email: String! @default(Value: "")
   password: String!
-  resources: [Resource]
+  resources: [Resource!]!
+  favorites: [Favorite!]!
 }
+
+
+
+
+
+
+
+
+
+
+
+
